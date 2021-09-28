@@ -1,0 +1,84 @@
+/*
+  The grid itself needs only 4 CSS declarations:
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	background-color: #fafafa;
+}
+
+.container {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 0 2rem 2rem;
+}
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 24rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.myGallery {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+ 
+  .gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+  
+  /*
+    And here are some declarations for the image caption.
+    Just hover over one of the last 5 images to see it.
+  */
+  
+  .myGallery .item img {
+    vertical-align: middle;
+  }
+
+  .modal-header{
+    background-color: rgb(255, 196, 0);
+    color: #fff;
+  }
+  .modal-footer{
+    background-color: rgb(255, 196, 0);
+    color: #fff;
+  }
+  
+  /*
+    The rest is only styling for this example page
+  */
+  
+  @import url("https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;900&display=swap");
+  
+  body {
+    font: 400 1.5em/1.58 Vollkorn, serif;
+  }
+  
+  h1,
+  p {
+    text-align: center;
+  }
+  
+  .myGallery {
+    font-size: 1rem;
+  }
+  
